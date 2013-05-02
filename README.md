@@ -4,7 +4,7 @@ DayZ_3dS
 dayz files for 3dS server
 specified file for clan3ds.it server
 
-normal files mission.pbo and server.pbo from DAYCC (thanks to Crosire) modified with other scrpits.
+normal files mission.pbo and server.pbo from DAYZCC (thanks to Crosire) modified with other scrpits.
 
 added scritps:
 Admintools -  thanks to BluePhoenix: https://github.com/BluePhoenix175/DayZ-Admin-Tools-
