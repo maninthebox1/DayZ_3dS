@@ -1,0 +1,81 @@
+#include "defines.hpp"
+#include "build_recipe_dialog.hpp"
+#include "build_recipe_list_dialog.hpp"
+respawn = "BASE";
+respawndelay = 5;
+loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
+onLoadMission = "DayZ Chernarus";
+OnLoadIntro = "Welcome to Chernarus";
+OnLoadIntroTime = False;
+OnLoadMissionTime = False;
+onPauseScript = "\z\addons\dayz_code\compile\player_onPause.sqf";
+disabledAI = true;
+disableChannels[] = {0,2,6};
+enableItemsDropping = 0;
+aiKills = 1;
+diagRadio = 1;
+diagHit = 1;
+
+
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 100;
+};
+
+#include "gcam\gcam_component.hpp"
+
+class DayZ_loadingScreen
+{ 
+	idd = -1;
+	duration = 10e10;
+	fadein = 0;
+	fadeout = 0;
+	name = "loading screen";
+	class controlsBackground
+	{
+		class blackBG : RscText
+		{
+			x = safezoneX;
+			y = safezoneY;
+			w = safezoneW;
+			h = safezoneH;
+			text = "";
+			colorText[] = {0,0,0,0};
+			colorBackground[] = {0,0,0,1};
+		};
+	};
+	class controls
+	{
+		class Title1 : RscLoadingText
+		{
+			text = "$STR_LOADING";
+		};
+		class CA_Progress : RscProgress
+		{
+			idc = 104;
+			type = 8;
+			style = 0;
+			texture = "\ca\ui\data\loadscreen_progressbar_ca.paa";
+		};
+		class CA_Progress2 : RscProgressNotFreeze
+		{
+			idc = 103;
+		};
+		class Name2: RscText
+		{
+			idc = 101;
+			x = 0.05;
+			y = 0.029412;
+			w = 0.9;
+			h = 0.04902;
+			text = "";
+			sizeEx = 0.05;
+			colorText[] = {0.543,0.5742,0.4102,1.0};
+		};
+	};
+};
+#include "addons\SARGE\SAR_define.hpp"
+
+#include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h"
